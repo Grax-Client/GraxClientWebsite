@@ -21,6 +21,7 @@
             --text-muted: #a1a1aa;
             --border: #27272a;
             --glow: rgba(139, 92, 246, 0.4);
+
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -28,6 +29,12 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+        to { opacity: 1; }
         }
         /* Animated background */
         .bg-grid {
@@ -56,6 +63,19 @@
         @keyframes pulse {
             0%, 100% { opacity: 0.3; transform: translateX(-50%) scale(1); }
             50% { opacity: 0.5; transform: translateX(-50%) scale(1.1); }
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px var(--glow), 0 0 50px rgba(139, 92, 246, 0.15);
         }
         /* Navigation */
         nav {
@@ -340,7 +360,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#download">Download</a></li>
             <li><a href="#discord">Discord</a></li>
-            <li><a href="#docs">Docs</a></li>
+            <li><a href="grax-docs.html">Docs</a></li>
         </ul>
         <a href="#download" class="btn btn-primary">Download</a>
     </nav>
